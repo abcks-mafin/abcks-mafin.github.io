@@ -232,3 +232,44 @@
 }
 
 
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+.test-tab {
+	position: relative;
+	height:400px;
+	border:1px solid #ddd;
+	border-left:0;
+	border-right:0;
+
+
+	$rab-width: 100px;
+	.tab {
+		display:block;
+		width:$rab-width;
+		line-height:50px;
+		padding:0 20px;
+		border-bottom:1px solid #ddd;
+	}
+	.con {
+		position:absolute; left:$rab-width; top:0; z-index:1;
+		height:100%;
+		padding: 15px;
+		border-left:1px solid #ddd;
+		background-color:#fff;
+	}
+
+	& > li {
+		&:first-child .con {
+			z-index:2;
+		}
+		&:hover {
+			.tab {
+				background-color:#eee;
+			}
+			.con {
+				z-index:2;
+			}
+		}
+	}
+}
