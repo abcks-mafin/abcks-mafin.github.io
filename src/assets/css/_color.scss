@@ -26,12 +26,18 @@ $blue: #0045DA;
 $blue-light: #5A9DFF;
 $purple: #BF1DF5;
 $red: #EE2020;
+$yellow: #FFBB00;
+$red: #EE2020;
 
 // Opacity
 $opacity-02: rgba(#000,.02);
 $opacity-03: rgba(#000,.03);
 $opacity-04: rgba(#000,.04);
 $opacity-05: rgba(#000,.05);
+$opacity-06: rgba(#000,.06);
+$opacity-07: rgba(#000,.07);
+$opacity-08: rgba(#000,.08);
+$opacity-09: rgba(#000,.09);
 $opacity-10: rgba(#000,.10);
 $opacity-15: rgba(#000,.15);
 $opacity-20: rgba(#000,.20);
@@ -56,6 +62,10 @@ $opacity-reverse-02: rgba(#fff,.02);
 $opacity-reverse-03: rgba(#fff,.03);
 $opacity-reverse-04: rgba(#fff,.04);
 $opacity-reverse-05: rgba(#fff,.05);
+$opacity-reverse-06: rgba(#fff,.06);
+$opacity-reverse-07: rgba(#fff,.07);
+$opacity-reverse-08: rgba(#fff,.08);
+$opacity-reverse-09: rgba(#fff,.09);
 $opacity-reverse-10: rgba(#fff,.10);
 $opacity-reverse-15: rgba(#fff,.15);
 $opacity-reverse-20: rgba(#fff,.20);
@@ -74,3 +84,7 @@ $opacity-reverse-80: rgba(#fff,.80);
 $opacity-reverse-85: rgba(#fff,.85);
 $opacity-reverse-90: rgba(#fff,.90);
 $opacity-reverse-95: rgba(#fff,.95);
+
+
+// Gradation
+$default-gradation: aa;
