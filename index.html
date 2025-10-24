@@ -364,6 +364,47 @@
 				<img src="assets/images/slide4.jpg" width="100%" height="auto">
 			</li>
 		</ul>
+
+
+
+
+
+		<!-- HTML -->
+		<div class="bubble-wrap">
+			<!-- inline SVG: 필요하면 width/height를 조절하거나 viewBox로 반응형 처리 -->
+			<svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="말풍선">
+				<defs>
+					<linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" stop-color="#FF6A00"/>
+						<stop offset="100%" stop-color="#EE0979"/>
+					</linearGradient>
+				</defs>
+
+				<!-- path: rounded rect + tail 통합 -->
+				<path
+						d="M18 12
+	         h250
+	         a12 12 0 0 1 12 12
+	         v48
+	         a12 12 0 0 1 -12 12
+	         h-210
+	         l-34 24    <!-- 꼬리 좌표(삼각형 형태) -->
+	         v-24
+	         h-6
+	         a12 12 0 0 1 -12 -12
+	         v-48
+	         a12 12 0 0 1 12 -12
+	         z"
+						fill="#ffffff"
+						stroke="url(#g1)"
+						stroke-width="6"
+						stroke-linejoin="round"
+						stroke-linecap="round"
+				/>
+				<!-- 내부 텍스트(원하면 foreignObject로 대체) -->
+				<text x="34" y="46" font-family="Inter, Arial" font-size="14" fill="#222">말풍선 내용이 여기에 들어갑니다.</text>
+			</svg>
+		</div>
 	</main>
 	<!-- // content -->
 
