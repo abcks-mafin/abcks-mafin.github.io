@@ -2,7 +2,7 @@
 {%- import "_templates/_macro/_macro.njk" as macro %}
 
 {% block content %}
-	<div class="search-wrap">
+	<div class="search-wrap" style="display:none;">
 		<div class="search-input-box">
 			<label class="sound_only" for="search-input">검색</label>
 			<input
@@ -191,7 +191,7 @@
     })();
 	</script>
 
-	<ul class="test-tab">
+	<ul class="test-tab" style="display:none;">
 		<li>
 			<strong class="tab">tab 1</strong>
 			<ul class="con">
@@ -240,4 +240,106 @@
 			</ul>
 		</li>
 	</ul>
+
+	<header class="header">
+		{#<strong class="logo">logo</strong>#}
+		<button type="button" class="header_button menu_button"><i>메뉴 열기</i></button>
+		<div class="search">
+			<strong class="logo">매일 쌓이는 혜택. Everyday, 에브리워드</strong>
+			<button type="button" class="search_button"><i>검색하기</i></button>
+		</div>
+		<div class="util">
+			<a href="#" class="header_button login">로그인</a>
+			{#<a href="#" class="my">로그인</a>#}
+		</div>
+	</header>
+	<ul class="img_list">
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide1.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide3.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide4.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide1.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide3.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide4.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide1.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide3.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide4.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide1.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide3.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide4.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide1.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide3.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide4.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide1.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide2.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide3.jpg" width="100%" height="auto">
+		</li>
+		<li>
+			<img src="assets/images/slide4.jpg" width="100%" height="auto">
+		</li>
+	</ul>
+
+
+
+
+
+
 {%- endblock %}
