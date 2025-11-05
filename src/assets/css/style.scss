@@ -298,7 +298,7 @@ body {
 		position:relative; z-index:1;
 		height:40px;
 		padding:0 20px;
-		background-color:rgba(#fff, .95);
+		background-color:rgba(#fff, 1);
 		backdrop-filter: blur(24px);
 		&:before,
 		&:after {
