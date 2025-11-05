@@ -287,130 +287,160 @@ body {
 	margin:0; min-height: 100dvh;
 }
 .header {
-	position:fixed; left:0; top:0;
-	//position: sticky; top:0; z-index:10;
+	//position:fixed; left:0; top:0;
+	position: sticky; top:0; z-index:10;
 	width:100%;
-	height:70px;
-	padding:0 5px 0;
-	display:flex;
-	align-items:center;
-	justify-content: space-between;
 
-	&:before,
-	&:after {
-		position: absolute; left:0; top:0; right:0; z-index:0;
-		height:calc(100% + 5px);
-		content: "";
-	}
-	&:before {
+	.header_top {
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		position:relative; z-index:1;
+		height:40px;
+		padding:0 20px;
+		background-color:rgba(#fff, .95);
 		backdrop-filter: blur(24px);
-		/* 아래로 갈수록 Blur 자체가 서서히 사라지게 하는 mask */
-		mask-image: linear-gradient(
-			to bottom,
-			#000 0%,
-			#000 30%,
-			rgba(0,0,0,0.99) 34%,
-			rgba(0,0,0,0.98) 38%,
-			rgba(0,0,0,0.96) 42%,
-			rgba(0,0,0,0.92) 47%,
-			rgba(0,0,0,0.87) 52%,
-			rgba(0,0,0,0.80) 57%,
-			rgba(0,0,0,0.72) 62%,
-			rgba(0,0,0,0.62) 68%,
-			rgba(0,0,0,0.50) 74%,
-			rgba(0,0,0,0.38) 80%,
-			rgba(0,0,0,0.28) 86%,
-			rgba(0,0,0,0.18) 91%,
-			rgba(0,0,0,0.10) 96%,
-			rgba(0,0,0,0.05) 99%,
-			rgba(0,0,0,0) 100%
-		);
-	}
-	&:after {
-		background:linear-gradient(180deg, rgba(#fff, .8) 0%, rgba(#fff, 0) 90%);
-	}
-
-	.header_button {
-		display:block;
-		position:relative; z-index:1;
-		width:50px; heighT:50px;
-		background-repeat:no-repeat;
-		background-position:center;
-	}
-	.menu_button {
-		i {
-			position:absolute; left:50%; top:50%;
-			transform:translate(-50%, -50%);
-			width:20px; height:2px;
-			font-size:0; text-indent:-9999px;
-			background:linear-gradient(90deg, #222 77%, transparent 77%);
-			&:before,
-			&:after {
-				position:absolute; left:0;
-				width:100%; height:100%;
-				background-color:#222;
-				content:"";
-			}
-			&:before {top:-8px;}
-			&:after {bottom:-8px;}
+		&:before,
+		&:after {
+			position:absolute; left:0; right:0; top:40px;
+			height:1px;
+			content:"";
+		}
+		&:before {
+			background-color: rgba(#fff, .95);
+		}
+		&:after {
+			background-color: rgba(#000, .07);
 		}
 	}
-	.util {
+	.header_bottom {
 		position:relative; z-index:1;
-		a {
-			font-size:0; text-indent:-9999px;
-		}
-		.login {
-			background-image:url("../images/header_signin.svg");
-		}
-	}
+		height:70px;
+		margin-top:1px;
+		padding:0 10px 0;
+		display:flex;
+		align-items:center;
+		justify-content: space-between;
 
-	.search {
-		overflow:hidden;
-		position:relative; z-index:1;
-		width:calc(100% - 120px); max-width:200px;
-		margin-top:0;
+		&:before,
+		&:after {
+			position: absolute; left:0; top:0; right:0; z-index:0;
+			height:calc(100% + 5px);
+			content: "";
+		}
+		&:before {
+			backdrop-filter: blur(24px);
+			/* 아래로 갈수록 Blur 자체가 서서히 사라지게 하는 mask */
+			mask-image: linear-gradient(
+					to bottom,
+					#000 0%,
+					#000 30%,
+					rgba(0,0,0,0.99) 34%,
+					rgba(0,0,0,0.98) 38%,
+					rgba(0,0,0,0.96) 42%,
+					rgba(0,0,0,0.92) 47%,
+					rgba(0,0,0,0.87) 52%,
+					rgba(0,0,0,0.80) 57%,
+					rgba(0,0,0,0.72) 62%,
+					rgba(0,0,0,0.62) 68%,
+					rgba(0,0,0,0.50) 74%,
+					rgba(0,0,0,0.38) 80%,
+					rgba(0,0,0,0.28) 86%,
+					rgba(0,0,0,0.18) 91%,
+					rgba(0,0,0,0.10) 96%,
+					rgba(0,0,0,0.05) 99%,
+					rgba(0,0,0,0) 100%
+			);
+		}
+		&:after {
+			background:linear-gradient(180deg, rgba(#fff, .8) 0%, rgba(#fff, 0) 90%);
+		}
 
-		.logo {
-			position:absolute; left:2px; top:2px; z-index:1;
-			width:40px; height:40px;
-			font-size:0; text-indent:-9999px;
-			background-image:url("../images/logo_emblem.svg");
+		.header_button {
+			display:block;
+			position:relative; z-index:1;
+			width:44px; heighT:44px;
 			background-repeat:no-repeat;
-			background-size:26px auto;
 			background-position:center;
 		}
-
-		.search_button {
-			vertical-align:top;
-			width:100%; height:44px;
-			padding:2px;
-			background: linear-gradient(90deg, $everyday-primary 10%, $reward-primary 90%);
-			border-radius:50px;
-
+		.menu_button {
 			i {
-				display:block;
-				position:relative;
-				height:100%;
+				position:absolute; left:50%; top:50%;
+				transform:translate(-50%, -50%);
+				width:20px; height:2px;
 				font-size:0; text-indent:-9999px;
-				background-color:#fff;
-				border-radius:50px;
+				background:linear-gradient(90deg, #222 77%, transparent 77%);
+				&:before,
 				&:after {
-					position:absolute; right:0; top:0;
-					width:40px; height:40px;
-					background-image:url("../images/search_zoom.svg");
-					background-repeat:no-repeat;
-					background-position:center;
-					background-size:20px auto;
-					border-radius:100%;
+					position:absolute; left:0;
+					width:100%; height:100%;
+					background-color:#222;
 					content:"";
+				}
+				&:before {top:-8px;}
+				&:after {bottom:-8px;}
+			}
+		}
+		.util {
+			position:relative; z-index:1;
+			a {
+				font-size:0; text-indent:-9999px;
+			}
+			.login {
+				background-image:url("../images/header_signin.svg");
+			}
+			.my {
+				background-image:url("../images/header_my.svg");
+			}
+		}
+
+		.search {
+			overflow:hidden;
+			position:relative; z-index:1;
+			width:calc(100% - 120px); max-width:200px;
+			margin-top:0;
+
+			.logo {
+				position:absolute; left:2px; top:2px; z-index:1;
+				width:40px; height:40px;
+				font-size:0; text-indent:-9999px;
+				background-image:url("../images/logo_emblem.svg");
+				background-repeat:no-repeat;
+				background-size:26px auto;
+				background-position:center;
+			}
+
+			.search_button {
+				vertical-align:top;
+				width:100%; height:44px;
+				padding:2px;
+				background: linear-gradient(90deg, $everyday-primary 10%, $reward-primary 90%);
+				border-radius:50px;
+
+				i {
+					display:block;
+					position:relative;
+					height:100%;
+					font-size:0; text-indent:-9999px;
+					background-color:#fff;
+					border-radius:50px;
+					&:after {
+						position:absolute; right:0; top:0;
+						width:40px; height:40px;
+						background-image:url("../images/search_zoom.svg");
+						background-repeat:no-repeat;
+						background-position:center;
+						background-size:20px auto;
+						border-radius:100%;
+						content:"";
+					}
 				}
 			}
 		}
 	}
 }
 .container {
-	padding-top:70px;
+	//padding-top:70px;
 }
 
 
