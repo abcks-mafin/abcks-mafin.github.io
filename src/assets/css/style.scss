@@ -6,6 +6,19 @@
 @import '_mixin';
 
 
+:root {
+	--right-step1:-3%;
+	--right-step2:-1%;
+	--right-step3:0.5%;
+	--right-step4:1.2%;
+	--right-step5:1.6%;
+	--rorate3d_deg:28deg;
+	--everyday-primary:#00802B;
+	--everyday-primary-dark:#006020;
+	--reward-primary:#FF8F1E;
+}
+
+
 @mixin zoom_icon_pc {
 	background-image: url('#{$bg-url}/search_zoom.svg');
 	background-repeat: no-repeat;
@@ -401,14 +414,62 @@ body {
 			width:calc(100% - 120px); max-width:200px;
 			margin-top:0;
 
-			.logo {
-				position:absolute; left:2px; top:2px; z-index:1;
-				width:40px; height:40px;
+			.ani_logo {
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				position:absolute; left:0; top:0; z-index:2;
+				width:44px; height:44px;
+			}
+			.ani_logo_inner {
+				width:33px; height:33px;
+				transform:scale(.85); // .79
+			}
+			.ani_logo .slogan {
+				overflow:hidden;
+				display:block;
+				position:relative;
+				width:100%; height:100%;
+				border-radius:100%;
+			}
+			.ani_logo .slogan:before {
+				position:absolute; left:0; top:0;
+				width:100%; height:100%;
+				background-color:var(--everyday-primary);
+				border-radius:100%;
+				/*animation:slogan_color 19s linear infinite;*/
+				animation:slogan_color 10s linear infinite;
+				content:"";
+			}
+			.ani_logo .er {
+				display:block;
+				position:absolute; right:0; top:5px;
+				width:23px;
+				height:12px;
+				animation:ER_move 10s linear infinite alternate;
+				transform-style: preserve-3d;
+			}
+			.ani_logo .smile {
+				/*opacity:0;*/
+				display:block;
+				position:absolute; left:7px; bottom:4px; z-index:1;
+				width:19px; height:9px;
+				animation:
+					smile_move 10s linear infinite alternate,
+					smile_show 10s linear both;
+				/*animation:
+            smile_move 10s linear infinite alternate;*/
+				transform-style: preserve-3d;
+			}
+			.ani_logo .smile img {width:19px; height:9px;}
+			.ani_logo .blinking {
+				display:block;
+				width:100%; height:100%;
 				font-size:0; text-indent:-9999px;
-				background-image:url("../images/logo_emblem.svg");
+				background-image:url('../images/logo-ER.svg');
+				background-size:23px 12px;
 				background-repeat:no-repeat;
-				background-size:26px auto;
-				background-position:center;
+				animation:ER_blinking 10s linear infinite;
 			}
 
 			.search_button {
@@ -447,6 +508,87 @@ body {
 
 
 
+@keyframes slogan_color {
+	/*
+  0% {background-color:var(--everyday-primary);}
+  96% {background-color:var(--everyday-primary);}
+  98% {background-color:var(--reward-primary);}
+  100% {background-color:var(--everyday-primary);}
+  */
+	0% {background-color:var(--everyday-primary);}
+	50% {background-color:var(--everyday-primary);}
+	50.5% {background-color:var(--everyday-primary-dark);}
+	51% {background-color:var(--everyday-primary);}
+	90% {background-color:var(--everyday-primary);}
+	90.5% {background-color:var(--everyday-primary-dark);}
+	91% {background-color:var(--everyday-primary);}
+	91.5% {background-color:var(--everyday-primary-dark);}
+	92% {background-color:var(--everyday-primary);}
+}
+@keyframes ER_blinking {
+	0% {transform:scaleY(1);}
+	50% {transform:scaleY(1);}
+	50.5% {transform:scaleY(0);}
+	51% {transform:scaleY(1);}
+	90% {transform:scaleY(1);}
+	90.5% {transform:scaleY(0);}
+	91% {transform:scaleY(1);}
+	91.5% {transform:scaleY(0);}
+	92% {transform:scaleY(1);}
+}
+@keyframes ER_move {
+	0% {transform:translate(var(--right-step1), 0) rotate3d(5, 5, 0, var(--rorate3d_deg));}
+	30% {transform:translate(var(--right-step1), 0) rotate3d(5, 5, 0, var(--rorate3d_deg));}
+
+	/* 아래로 이동 */
+	30.3% {transform:translate(var(--right-step2), 10%) rotate3d(4, 5, 0, var(--rorate3d_deg));}
+	30.6% {transform:translate(var(--right-step3), 20%) rotate3d(2.5, 5, 0, var(--rorate3d_deg));}
+	30.9% {transform:translate(var(--right-step4), 30%) rotate3d(2, 5, 0, var(--rorate3d_deg));}
+	31.2% {transform:translate(var(--right-step5), 40%) rotate3d(1, 5, 0, var(--rorate3d_deg));}
+	31.5% {transform:translate(var(--right-step5), 50%) rotate3d(0, 5, 0, var(--rorate3d_deg));}
+	31.8% {transform:translate(var(--right-step5), 60%) rotate3d(-1, 5, 0, var(--rorate3d_deg));}
+	32.1% {transform:translate(var(--right-step4), 70%) rotate3d(-2, 5, 0, var(--rorate3d_deg));}
+	32.4% {transform:translate(var(--right-step3), 80%) rotate3d(-2.5, 5, 0, var(--rorate3d_deg));}
+	32.7% {transform:translate(var(--right-step2), 90%) rotate3d(-4, 5, 0, var(--rorate3d_deg));}
+	33%   {transform:translate(var(--right-step1), 100%) rotate3d(-5, 5, 0, var(--rorate3d_deg));}
+	/* // 아래로 이동 완료 */
+
+	/* 왼쪽으로 이동 */
+	/*
+  70%   {transform:translate(calc(var(--right-step1) - 00%), 100%) rotate3d(-5, 5, 0, var(--rorate3d_deg));}
+  70.4% {transform:translate(calc(var(--right-step1) - 08%), 101.6%) rotate3d(-5, 3, 0, var(--rorate3d_deg));}
+  70.8% {transform:translate(calc(var(--right-step1) - 15%), 103.4%) rotate3d(-5, 1.5, 0, var(--rorate3d_deg));}
+  71.2% {transform:translate(calc(var(--right-step1) - 19%), 105%) rotate3d(-5, 0, 0, var(--rorate3d_deg));}
+  71.6% {transform:translate(calc(var(--right-step1) - 21%), 103.4%) rotate3d(-5, -1.5, 0, var(--rorate3d_deg));}
+  72%   {transform:translate(calc(var(--right-step1) - 27%), 101.6%) rotate3d(-5, -3, 0, var(--rorate3d_deg));}
+  72.4% {transform:translate(calc(var(--right-step1) - 34%), 100%) rotate3d(-5, -5, 0, var(--rorate3d_deg));}
+  */
+	70%   {transform:translate(calc(var(--right-step1) - 00.00%), 100%)   rotate3d(-5, 5.00, 0, var(--rorate3d_deg));}
+	70.4% {transform:translate(calc(var(--right-step1) - 05.67%), 101.6%) rotate3d(-5, 3.33, 0, var(--rorate3d_deg));}
+	70.8% {transform:translate(calc(var(--right-step1) - 11.33%), 103.4%) rotate3d(-5, 1.67, 0, var(--rorate3d_deg));}
+	71.2% {transform:translate(calc(var(--right-step1) - 17.00%), 105%)   rotate3d(-5, 0.00, 0, var(--rorate3d_deg));}
+	71.6% {transform:translate(calc(var(--right-step1) - 22.67%), 103.4%) rotate3d(-5, -1.67, 0, var(--rorate3d_deg));}
+	72%   {transform:translate(calc(var(--right-step1) - 28.33%), 101.6%) rotate3d(-5, -3.33, 0, var(--rorate3d_deg));}
+	72.4% {transform:translate(calc(var(--right-step1) - 34.00%), 100%)   rotate3d(-5, -5.00, 0, var(--rorate3d_deg));}
+	/* // 완쪽으로 이동 완료 */
+
+	100%  {transform:translate(-36%, 100%) rotate3d(-5, -5, 0, var(--rorate3d_deg));}
+}
+@keyframes smile_move {
+	0% {transform:translate(0, 0) scale(1, 1) rotate3d(0, 0, 0, var(--rorate3d_deg));}
+	30% {transform:translate(0, 0) scale(1, 1) rotate3d(0, 0, 0, var(--rorate3d_deg));}
+
+	/* 아래로 이동 */
+	33%   {transform:translate(-25%, 110%) scale(.5, .5) rotate3d(-5, -5, 0, var(--rorate3d_deg));}
+	33.1% {transform:translate(-25%, 110%) scale(.5, .5) rotate3d(-5, -5, 0, var(--rorate3d_deg));}
+	100%  {transform:translate(-25%, 110%) scale(.5, .5) rotate3d(-5, -5, 0, var(--rorate3d_deg));}
+}
+@keyframes smile_show {
+	0%   {opacity:0;}
+	49%  {opacity:0;}
+	50%  {opacity:1;}
+	100% {opacity:1;}
+}
 
 
 
