@@ -308,6 +308,7 @@ body {
 		}
 		&:before {
 			background-color: rgba(#fff, .95);
+			backdrop-filter: blur(24px);
 		}
 		&:after {
 			background-color: rgba(#000, .07);
