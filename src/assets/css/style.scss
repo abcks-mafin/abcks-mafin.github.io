@@ -223,6 +223,18 @@
 		}
 	}
 }
+
+.banner-animation {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto 40px;
+	display: block;
+}
+.banner-animation svg {
+	width: 100%;
+	height: auto;
+	display: block;
+}
 .recent-search-words-list-item:has(.recent-search-word-delete:hover) .recent-search-word {
 	border-color: rgba($everyday-primary, .6);
 }
